@@ -1,8 +1,8 @@
-<h1>Listing leads2s</h1>
+<h1>Listing Leads</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr id= "cols">
       <th>Name</th>
       <th>Status</th>
       <th>Lead developer</th>
@@ -19,7 +19,22 @@
     <% @leads2s.each do |leads2| %>
       <tr>
         <td><%= leads2.name %></td>
-        <td><%= leads2.status %></td>
+
+
+        <td>
+        <% if(leads2.status.to_i == 1) %>
+        Hot Sale
+        <% elsif (leads2.status.to_i == 2) %>
+        Cold Sale
+        <% elsif (leads2.status.to_i == 3) %>
+        Complete
+        <% elsif (leads2.status.to_i == 4) %>
+        In-Development
+        <% else %>
+        Invalid Input
+        <% end %>
+        </td>
+
         <td><%= leads2.lead_developer %></td>
         <td><%= leads2.note %></td>
         <td><%= leads2.hourly_rate %></td>
@@ -34,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Leads2', new_leads2_path %>
+<%= link_to 'New Leads', new_leads2_path %>

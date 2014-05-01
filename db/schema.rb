@@ -11,34 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227213047) do
+ActiveRecord::Schema.define(version: 20140410210921) do
 
-  create_table "admin_users", force: true do |t|
-    t.string   "first_name",      limit: 25
-    t.string   "last_name",       limit: 50
-    t.string   "email",           limit: 100, default: "", null: false
-    t.string   "username",        limit: 25
-    t.string   "hashed_password", limit: 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
-
-  create_table "data", force: true do |t|
-    t.string   "first_name", limit: 25
-    t.string   "last_name",  limit: 50
-    t.string   "email",      limit: 100, default: "", null: false
-    t.string   "username",   limit: 25
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "humen", force: true do |t|
+  create_table "blehs", force: true do |t|
     t.string   "name"
-    t.integer  "age"
-    t.string   "city"
-    t.string   "state"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dones", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,13 +29,26 @@ ActiveRecord::Schema.define(version: 20140227213047) do
   create_table "leads", force: true do |t|
     t.string   "name"
     t.integer  "status"
-    t.string   "developer"
-    t.text     "notes"
+    t.string   "lead_developer"
+    t.text     "note"
+    t.decimal  "hourly_rate",    precision: 10, scale: 0
+    t.date     "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "leads2s", force: true do |t|
+    t.string   "name"
+    t.integer  "status"
+    t.string   "lead_developer"
+    t.text     "note"
+    t.decimal  "hourly_rate",    precision: 10, scale: 0
+    t.date     "deadline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "proleads", force: true do |t|
     t.string   "name"
     t.integer  "status"
     t.string   "lead_developer"

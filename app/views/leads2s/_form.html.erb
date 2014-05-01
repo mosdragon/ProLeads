@@ -15,10 +15,11 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
+
+  <div class = "field">
+  <%= select_tag("leads2[status]", options_for_select([['Hot Sale', 1], ['Cold Sale', 2], ['Complete', 3], ['In-Development', 4]])) %>
   </div>
+  
   <div class="field">
     <%= f.label :lead_developer %><br>
     <%= f.text_field :lead_developer %>
@@ -36,6 +37,6 @@
     <%= f.date_select :deadline %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Lead" %>
   </div>
 <% end %>

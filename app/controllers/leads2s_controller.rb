@@ -28,7 +28,7 @@ class Leads2sController < ApplicationController
 
     respond_to do |format|
       if @leads2.save
-        format.html { redirect_to @leads2, notice: 'Leads2 was successfully created.' }
+        format.html { redirect_to @leads2, notice: 'Lead was successfully created.' }
         format.json { render action: 'show', status: :created, location: @leads2 }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class Leads2sController < ApplicationController
   def update
     respond_to do |format|
       if @leads2.update(leads2_params)
-        format.html { redirect_to @leads2, notice: 'Leads2 was successfully updated.' }
+        format.html { redirect_to @leads2, notice: 'Lead was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

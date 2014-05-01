@@ -7,7 +7,17 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @leads2.status %>
+  <% if(@leads2.status.to_i == 1) %>
+  Hot Sale
+  <% elsif (@leads2.status.to_i == 2) %>
+  Cold Sale
+  <% elsif (@leads2.status.to_i == 3) %>
+  Complete
+  <% elsif (@leads2.status.to_i == 4) %>
+  In-Development
+  <% else %>
+  Invalid Input
+  <% end %>
 </p>
 
 <p>

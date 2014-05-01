@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: simple_cms_development
+  database: pro_leads
   pool: 5
-  username: simple_cms
-  password: luck0011
+  username: leads_user
+  password: lucky0011
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
